@@ -1,0 +1,10 @@
+{
+  "short_name": "Bids Test",
+  "name": "Bids Test",
+  "icons": [
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

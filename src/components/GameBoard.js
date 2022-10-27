@@ -36,6 +36,7 @@ export const GameBoard = () => {
                     payload: err.message,
                 })
             })
+        fetchNewData()
         setTransaction(resultTransaction, 'Now youre take part in this lottery')
     }
 
@@ -54,7 +55,7 @@ export const GameBoard = () => {
                     payload: err.message,
                 })
             })
-
+        fetchNewData()
         setTransaction(
             resultTransaction,
             `Congratulations to the winner ${state.lotteryHistory[0].winnerAddress}`,
@@ -130,13 +131,13 @@ export const GameBoard = () => {
 
     useEffect(() => {
         fetchNewData()
-    }, [state.transactions])
+    }, [])
 
     return (
         <>
             <section className="game_board">
                 <h2>Lottery:{state.currLottery.id}</h2>
-                <h3>Ballance:3 ETH</h3>
+                <h3>Ballance:{state.currLottery.balance}</h3>
                 <details>
                     <summary>
                         Players({state.currLottery.players.length}):

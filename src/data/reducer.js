@@ -26,10 +26,28 @@ export const reducer = (state, action) => {
                 contract: action.payload,
             }
         }
+        case 'SET_TRANACTION': {
+            return {
+                ...state,
+                transactions: [...state.transactions, action.payload],
+            }
+        }
         case 'SET_ACCOUNT': {
             return {
                 ...state,
                 account: action.payload,
+            }
+        }
+        case 'SET_LOTTERY': {
+            return {
+                ...state,
+                currLottery: action.payload,
+            }
+        }
+        case 'SET_HISTORY': {
+            return {
+                ...state,
+                lotteryHistory: action.payload,
             }
         }
         default:
